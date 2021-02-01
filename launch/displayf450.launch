@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<launch>   
+<!-- Load the joint controller-->
+<rosparam file="$(find drone_f450)/config/f450_speed_control.yaml" command="load"/>
+
+<!--args for gazebo-->
+       <include file="$(find gazebo_ros)/launch/empty_world.launch"> 
+         <arg name="world_name" value="worlds/empty.world"/>
+  <!--   <arg name="debug" value="True" />  -->
+  <!--   <arg name="gui" value="True" />    -->
+    	   <arg name="paused" value="true"/>
+     	   <arg name="use_sim_time" value="False"/>   
+ <!--    <arg name="headless" default="False"/>     -->
+       </include>
+  
+<!-- Load the URDF into the ROS Parameter Server 
+<arg name="robot_name" default="Spark"/>-->
+<arg name="model" default="/home/sierra/catkin_ws/src/drone_f450/urdf/f450.urdf"/>
+<param name="robot_description" textfile="$(arg model)" />
+
+<!--load the rst and jsp
+<param name="use_gui" value="True"/>
+<node name="joint_state_publisher_spark" pkg="joint_state_publisher" type="joint_state_publisher"/>-->
+<node name="robot_state_publisher_spark" pkg="robot_state_publisher" type="robot_state_publisher" />
+
+<!-- load the controllers> -->
+<node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+output="screen" ns="/f450" args="joint_state_controller
+                                 joint1_velocity_controller
+			               joint2_velocity_controller
+		                     joint3_velocity_controller
+			               joint4_velocity_controller" />
+<!--_________________________________________________________________________________________________________________________________-->
+<node name="f450_urdf_gazebo_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+      args="-urdf -param robot_description -model f450 -z 1"/>
+<!--_________________________________________________________________________________________________________________________________-->
+<!--_________________________________________________________________________________________________________________________________-->
+
+<!--rviz previous part!!!!!!!!!!!!!!!!!!!!!!!!  :  -->
+
+<!--	<node name="joint_state_publisher_spark" pkg="joint_state_publisher" type="joint_state_publisher">
+          <param name="use_gui" value="$(arg gui)"/>
+      </node>  -->
+
+<!-- <node name="robot_state_publisher_spark" pkg="robot_state_publisher" type="robot_state_publisher" />   -->
+<!-- <node name="rviz" pkg="rviz" type="rviz" required="true"/>  -->
+
+<!-- <node name="spark_gazebo" pkg="gazebo_ros" type="spawn_model" output="screen"
+      args="-urdf -param robot_description -model f450" /> -->
+<!--_________________________________________________________________________________________________________________________________-->
+ </launch>
+

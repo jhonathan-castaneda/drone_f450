@@ -1,0 +1,989 @@
+<?xml version="1.0"?>
+<robot name = "Spark_F450">
+<!-- -->
+<!--________________________________________CHASIS-0_______________________________________________________________________________  -->
+<link name="CHASIS_0">
+ <visual>
+ <origin xyz="0 0 0" rpy="0 0 0" />
+ <geometry>   
+           <mesh filename="package://drone_f450/meshes/chasis_0.STL" scale="0.001 0.001 0.001" />  
+ </geometry>
+ <material name="gold1">
+                        <color rgba="54 43 21 0.8"/>
+ </material>
+
+ </visual>
+   
+ <collision>
+ <origin xyz="0 0 0.00075" rpy="0 0 0"/>
+ <geometry>
+           <box size="0.108 0.108 0.0015"/>
+ </geometry>
+ </collision>
+		<inertial>
+			<mass value="0.0268"/>
+	 		<inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+		</inertial>
+</link>
+<!--________________________________________GPS_ANTENA_______________________________________________________________________________  -->
+<link name="GPS_ANTENNA">
+ <visual>
+     <origin xyz="0 0 0" rpy="0 0 0" />
+      #this origen is then located where the tf is placed
+     <geometry>
+              <mesh filename="package://drone_f450/meshes/gps_antena.STL" scale="0.001 0.001 0.001"/> 
+     </geometry>
+
+     <material name="GOLD2">
+              <color rgba="101 71 20 0.8"/>
+     </material>
+ </visual>
+    
+ <collision>
+     <origin xyz="0 0 0.031" rpy="0 0 0"/> #Respect to the GPS origen
+     <geometry>
+           <cylinder radius="0.027" length="0.062"/>
+     </geometry>
+ </collision>
+		<inertial>
+			<mass value="0.0268"/>
+	 		<inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+		</inertial>
+</link>
+<!--________________________________________GPS-PIXWAWK_______________________________________________________________________________  -->
+<link name="GPS_PIXHAWK">
+ <visual>
+     <origin xyz="0 0 0.0055" rpy="0 0 0" />#this origen is then located where the tf is placed
+     <geometry>
+              <cylinder radius="0.025" length="0.011"/>
+     </geometry>
+
+     <material name="GOLD2">
+              <color rgba="101 71 20 0.60"/>
+     </material>
+ </visual>
+    
+ <collision>
+     <origin xyz="0 0 0.0055" rpy="0 0 0"/> #Respect to the GPS origen
+     <geometry>
+               <cylinder radius="0.025" length="0.011"/>
+     </geometry>
+ </collision>
+		<inertial>
+			<mass value="0.02"/>
+	 		<inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+		</inertial>
+</link>
+<!--________________________________________LEFT-COLUMN_______________________________________________________________________________  -->
+<link name="LEFT_COLUMN">
+
+ <visual>
+     <origin xyz="0 0 0" rpy="0 0 0" />
+     <geometry>
+               <mesh filename="package://drone_f450/meshes/left_column.STL" scale="0.001 0.001 0.001"/>
+     </geometry>
+     <material name="GOLD2">
+          <color rgba="101 71 20 0.8"/>
+     </material>
+ </visual>
+    
+ <collision>
+     <origin xyz="0 0 -0.011" rpy="0 0 0"/>
+     <geometry>
+           <cylinder radius="0.003176" length="0.022"/>
+     </geometry>
+ </collision>
+		<inertial>
+			<mass value="0.0009"/>
+	 		<inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+		</inertial>
+</link>
+<!--________________________________________RIGHT-COLUMN_______________________________________________________________________________  -->
+<link name="RIGHT_COLUMN">
+
+ <visual>
+     <origin xyz="0 0 0" rpy="0 0 0" />
+     <geometry>
+               <mesh filename="package://drone_f450/meshes/right_column.STL" scale="0.001 0.001 0.001"/>
+     </geometry>
+
+ </visual>
+    
+ <collision>
+     <origin xyz="0 0 -0.011" rpy="0 0 0"/>
+     <geometry>
+           <cylinder radius="0.003176" length="0.022"/>
+     </geometry>
+ </collision>
+		<inertial>
+			<mass value="0.0009"/>
+	 		<inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+		</inertial>
+</link>
+
+<!--________________________________________CHASIS-1_______________________________________________________________________________  -->
+<link name="CHASIS_1">
+
+ <visual>
+     <origin xyz="0 0.032 0" rpy="0 0 0" />
+     <geometry>
+               <mesh filename="package://drone_f450/meshes/chasis_1.STL" scale="0.001 0.001 0.001"/>
+     </geometry>
+     <material name="GOLD2">
+          <color rgba="101 71 20 0.8"/>
+     </material>
+ </visual>
+    
+ <collision>
+ <origin xyz="0 0.032 0.00075" rpy="0 0 0"/>
+          <geometry>
+                   <box size="0.108 0.108 0.0015"/>
+         </geometry>
+ </collision>
+		<inertial>
+			<mass value="0.0268"/>
+	 		<inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+		</inertial>
+</link>
+<!--________________________________________FRONT-LEFT-BLOCK___________________________________________________________________________  -->
+<link name="FRONT_LEFT_BLOCK">
+
+ <visual>
+     <origin xyz="0 0 0" rpy="0 0 0" />
+     <geometry>
+               <mesh filename="package://drone_f450/meshes/front_left_block.STL" scale="0.001 0.001 0.001"/>
+     </geometry>
+     <material name="GOLD2">
+          <color rgba="101 71 20 0.60"/>
+     </material>
+ </visual>
+    
+ <collision>
+ <origin xyz="0 0 -0.019 " rpy="0 0 0"/>
+          <geometry>
+                <cylinder radius="0.02475" length="0.038"/>
+         </geometry>
+ </collision>
+		<inertial>
+			<mass value="0.03862"/>
+	 		<inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+		</inertial>
+</link>
+<!--________________________________________FRONT-RIGHT-BLOCK___________________________________________________________________________  -->
+<link name="FRONT_RIGHT_BLOCK">
+
+ <visual>
+     <origin xyz="0 0 0" rpy="0 0 0" />
+     <geometry>
+               <mesh filename="package://drone_f450/meshes/front_right_block.STL" scale="0.001 0.001 0.001"/>
+     </geometry>
+     <material name="GOLD2">
+          <color rgba="101 71 20 0.60"/>
+     </material>
+ </visual>
+    
+ <collision>
+ <origin xyz="0 0 -0.019 " rpy="0 0 0"/>
+          <geometry>
+                <cylinder radius="0.02475" length="0.038"/>
+         </geometry>
+ </collision>
+		<inertial>
+			<mass value="0.03862"/>
+	 		<inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+		</inertial>
+</link>
+
+<!--________________________________________BACK-LEFT-BLOCK___________________________________________________________________________  -->
+<link name="BACK_LEFT_BLOCK">
+
+ <visual>
+     <origin xyz="0 0 0" rpy="0 0 0" />
+     <geometry>
+               <mesh filename="package://drone_f450/meshes/back_left_block.STL" scale="0.001 0.001 0.001"/>
+     </geometry>
+     <material name="GOLD2">
+          <color rgba="101 71 20 0.60"/>
+     </material>
+ </visual>
+    
+ <collision>
+ <origin xyz="0 0 -0.019 " rpy="0 0 0"/>
+          <geometry>
+                <cylinder radius="0.02475" length="0.038"/>
+         </geometry>
+ </collision>
+		<inertial>
+			<mass value="0.03862"/>
+	 		<inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+		</inertial>
+</link>
+<!--________________________________________BACK-RIGHT-BLOCK___________________________________________________________________________  -->
+<link name="BACK_RIGHT_BLOCK">
+
+ <visual>
+     <origin xyz="0 0 0" rpy="0 0 0" />
+     <geometry>
+               <mesh filename="package://drone_f450/meshes/back_right_block.STL" scale="0.001 0.001 0.001"/>
+     </geometry>
+     <material name="GOLD2">
+          <color rgba="101 71 20 0.60"/>
+     </material>
+ </visual>
+    
+ <collision>
+ <origin xyz="0 0 -0.019 " rpy="0 0 0"/>
+          <geometry>
+                <cylinder radius="0.02475" length="0.038"/>
+         </geometry>
+ </collision>
+		<inertial>
+			<mass value="0.03862"/>
+	 		<inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+		</inertial>
+</link>
+<!--________________________________________FRONT-LEFT-ARM___________________________________________________________________________  -->
+<link name="FRONT_LEFT_ARM">
+
+ <visual>
+     <origin xyz="0 0 0" rpy="0 0 0" />
+     <geometry>
+               <mesh filename="package://drone_f450/meshes/front_left_arm.STL" scale="0.001 0.001 0.001"/>
+     </geometry>
+     <material name="GOLD2">
+          <color rgba="101 71 20 0.80"/>
+     </material>
+ </visual>
+    
+ <collision>
+ <origin xyz="0.077 0.077 0 " rpy="0 1.5708 0.785398"/>
+          <geometry>
+                <cylinder radius="0.02" length="0.154"/>
+         </geometry>
+ </collision>
+		<inertial>
+			<mass value="0.01278"/>
+	 		<inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+		</inertial>
+</link>
+<!--________________________________________FRONT-RIGHT-ARM___________________________________________________________________________  -->
+<link name="FRONT_RIGHT_ARM">
+
+ <visual>
+     <origin xyz="0 0 0" rpy="0 0 0" />
+     <geometry>
+               <mesh filename="package://drone_f450/meshes/front_right_arm.STL" scale="0.001 0.001 0.001"/>
+     </geometry>
+     <material name="GOLD2">
+          <color rgba="101 71 20 0.80"/>
+     </material>
+ </visual>
+    
+ <collision>
+ <origin xyz="0.077 -0.077 0 " rpy="0 1.5708 -0.785398"/>
+          <geometry>
+                <cylinder radius="0.02" length="0.154"/>
+         </geometry>
+ </collision>
+		<inertial>
+			<mass value="0.01278"/>
+	 		<inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+		</inertial>
+</link>
+<!--________________________________________BACK-LEFT-ARM___________________________________________________________________________  -->
+<link name="BACK_LEFT_ARM">
+
+ <visual>
+     <origin xyz="0 0 0" rpy="0 0 0" />
+     <geometry>
+               <mesh filename="package://drone_f450/meshes/back_left_arm.STL" scale="0.001 0.001 0.001"/>
+     </geometry>
+     <material name="GOLD2">
+          <color rgba="101 71 20 0.80"/>
+     </material>
+ </visual>
+    
+ <collision>
+ <origin xyz="-0.077 0.077 0 " rpy="0 1.5708 -0.785398"/>
+          <geometry>
+                <cylinder radius="0.02" length="0.154"/>
+         </geometry>
+ </collision>
+		<inertial>
+			<mass value="0.01278"/>
+	 		<inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+		</inertial>
+</link>
+
+<!--________________________________________BACK-RIGHT-ARM___________________________________________________________________________  -->
+<link name="BACK_RIGHT_ARM">
+
+ <visual>
+     <origin xyz="0 0 0" rpy="0 0 0" />
+     <geometry>
+               <mesh filename="package://drone_f450/meshes/back_right_arm.STL" scale="0.001 0.001 0.001"/>
+     </geometry>
+     <material name="GOLD2">
+          <color rgba="101 71 20 0.80"/>
+     </material>
+ </visual>
+    
+ <collision>
+ <origin xyz="-0.077 -0.077 0 " rpy="0 1.5708 0.785398"/>
+          <geometry>
+                <cylinder radius="0.02" length="0.154"/>
+         </geometry>
+ </collision>
+		<inertial>
+			<mass value="0.01278"/>
+	 		<inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+		</inertial>
+</link>
+
+<!--________________________________________CHASIS-2_______________________________________________________________________________  -->
+<link name="CHASIS_2">
+
+ <visual>
+     <origin xyz="-0.035751 -0.035751 -0.0015" rpy="0 0 0" />
+     <geometry>
+               <mesh filename="package://drone_f450/meshes/chasis_2.STL" scale="0.001 0.001 0.001"/>
+     </geometry>
+     <material name="GOLD2">
+          <color rgba="101 71 20 0.8"/>
+     </material>
+ </visual>
+    
+ <collision>
+ <origin xyz="-0.035751 -0.035751 0.00075" rpy="0 0 0"/>
+          <geometry>
+                   <box size="0.181 0.117 0.0015"/>
+         </geometry>
+ </collision>
+		<inertial>
+			<mass value="0.02680"/>
+	 		<inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+		</inertial>
+</link>
+<!--________________________________________FRONT-LEFT-MBASE___________________________________________________________________________  -->
+<link name="FRONT_LEFT_MBASE">
+
+ <visual>
+     <origin xyz="0 0 0" rpy="0 0 0" />
+     <geometry>
+               <mesh filename="package://drone_f450/meshes/front_left_mbase.STL" scale="0.001 0.001 0.001"/>
+     </geometry>
+     <material name="GOLD2">
+          <color rgba="101 71 20 0.80"/>
+     </material>
+ </visual>
+    
+ <collision>
+ <origin xyz="0.017678 0.017678 0 " rpy="0 1.5708 0.785398"/>
+          <geometry>
+                <cylinder radius="0.04" length="0.07"/>
+         </geometry>
+ </collision>
+		<inertial>
+			<mass value="0.0192"/>
+	 		<inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+		</inertial>
+</link>
+<!--________________________________________FRONT-RIGHT-MBASE___________________________________________________________________________  -->
+<link name="FRONT_RIGHT_MBASE">
+
+ <visual>
+     <origin xyz="0 0 0" rpy="0 0 0" />
+     <geometry>
+               <mesh filename="package://drone_f450/meshes/front_right_mbase.STL" scale="0.001 0.001 0.001"/>
+     </geometry>
+     <material name="GOLD2">
+          <color rgba="101 71 20 0.80"/>
+     </material>
+ </visual>
+    
+ <collision>
+ <origin xyz="0.017678 -0.017678 0 " rpy="0 1.5708 -0.785398"/>
+          <geometry>
+                <cylinder radius="0.04" length="0.07"/>
+         </geometry>
+ </collision>
+		<inertial>
+			<mass value="0.0192"/>
+	 		<inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+		</inertial>
+</link>
+
+<!--________________________________________BACK-LEFT-MBASE___________________________________________________________________________  -->
+<link name="BACK_LEFT_MBASE">
+
+ <visual>
+     <origin xyz="0 0 0" rpy="0 0 0" />
+     <geometry>
+               <mesh filename="package://drone_f450/meshes/back_left_mbase.STL" scale="0.001 0.001 0.001"/>
+     </geometry>
+     <material name="GOLD2">
+          <color rgba="101 71 20 0.80"/>
+     </material>
+ </visual>
+    
+ <collision>
+ <origin xyz="-0.017678 0.017678 0 " rpy="0 1.5708 -0.785398"/>
+          <geometry>
+                <cylinder radius="0.04" length="0.07"/>
+         </geometry>
+ </collision>
+		<inertial>
+			<mass value="0.0192"/>
+	 		<inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+		</inertial>
+</link>
+<!--________________________________________BACK-RIGHT-MBASE___________________________________________________________________________  -->
+<link name="BACK_RIGHT_MBASE">
+
+ <visual>
+     <origin xyz="0 0 0" rpy="0 0 0" />
+     <geometry>
+               <mesh filename="package://drone_f450/meshes/back_right_mbase.STL" scale="0.001 0.001 0.001"/>
+     </geometry>
+     <material name="GOLD2">
+          <color rgba="101 71 20 0.80"/>
+     </material>
+ </visual>
+    
+ <collision>
+ <origin xyz="-0.017678 -0.017678 0 " rpy="0 1.5708 0.785398"/>
+          <geometry>
+                <cylinder radius="0.04" length="0.07"/>
+         </geometry>
+ </collision>
+		<inertial>
+			<mass value="0.0192"/>
+	 		<inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+		</inertial>
+</link>
+<!--________________________________________FRONT-LEFT-MOTOR___________________________________________________________________________  -->
+<link name="FRONT_LEFT_MOTOR">
+
+ <visual>
+     <origin xyz="0 0 0" rpy="0 0 0" />
+     <geometry>
+               <mesh filename="package://drone_f450/meshes/m1.STL" scale="0.001 0.001 0.001"/>
+     </geometry>
+     <material name="GOLD2">
+          <color rgba="101 71 20 0.80"/>
+     </material>
+ </visual>
+    
+ <collision>
+ <origin xyz="0 0 0.019 " rpy="0 0 0"/>
+          <geometry>
+                <cylinder radius="0.014" length="0.038"/>
+         </geometry>
+ </collision>
+		<inertial>
+			<mass value="0.145"/>
+	 		<inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+		</inertial>
+</link>
+
+<!--________________________________________FRONT-RIGHT-MOTOR___________________________________________________________________________  -->
+<link name="FRONT_RIGHT_MOTOR">
+
+ <visual>
+     <origin xyz="0 0 0" rpy="0 0 0" />
+     <geometry>
+               <mesh filename="package://drone_f450/meshes/m2.STL" scale="0.001 0.001 0.001"/>
+     </geometry>
+     <material name="GOLD2">
+          <color rgba="101 71 20 0.80"/>
+     </material>
+ </visual>
+    
+ <collision>
+ <origin xyz="0 0 0.019 " rpy="0 0 0"/>
+          <geometry>
+                <cylinder radius="0.014" length="0.038"/>
+         </geometry>
+ </collision>
+		<inertial>
+			<mass value="0.145"/>
+	 		<inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+		</inertial>
+</link>
+
+<!--________________________________________BACK-LEFT-MOTOR___________________________________________________________________________  -->
+<link name="BACK_LEFT_MOTOR">
+
+ <visual>
+     <origin xyz="0 0 0" rpy="0 0 0" />
+     <geometry>
+               <mesh filename="package://drone_f450/meshes/m3.STL" scale="0.001 0.001 0.001"/>
+     </geometry>
+     <material name="GOLD2">
+          <color rgba="101 71 20 0.80"/>
+     </material>
+ </visual>
+    
+ <collision>
+ <origin xyz="0 0 0.019 " rpy="0 0 0"/>
+          <geometry>
+                <cylinder radius="0.014" length="0.038"/>
+         </geometry>
+ </collision>
+		<inertial>
+			<mass value="0.145"/>
+	 		<inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+		</inertial>
+</link>
+
+<!--________________________________________BACK-RIGHT-MOTOR___________________________________________________________________________  -->
+<link name="BACK_RIGHT_MOTOR">
+
+ <visual>
+     <origin xyz="0 0 0" rpy="0 0 0" />
+     <geometry>
+               <mesh filename="package://drone_f450/meshes/m4.STL" scale="0.001 0.001 0.001"/>
+     </geometry>
+     <material name="GOLD2">
+          <color rgba="101 71 20 0.80"/>
+     </material>
+ </visual>
+    
+ <collision>
+ <origin xyz="0 0 0.019 " rpy="0 0 0"/>
+          <geometry>
+                <cylinder radius="0.014" length="0.038"/>
+         </geometry>
+ </collision>
+		<inertial>
+			<mass value="0.145"/>
+	 		<inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+		</inertial>
+</link>
+
+<!--________________________________________FRONT-LEFT-PROPELLER___________________________________________________________________________  -->
+<link name="FRONT_LEFT_PROPELLER">
+
+ <visual>
+     <origin xyz="0 0 0" rpy="0 0 0" />
+     <geometry>
+               <mesh filename="package://drone_f450/meshes/front_left_propeller.STL" scale="0.001 0.001 0.001"/>
+     </geometry>
+     <material name="GOLD2">
+          <color rgba="101 71 20 0.80"/>
+     </material>
+ </visual>
+    
+ <collision>
+ <origin xyz="0 0 0.0005 " rpy="0 0 0"/>
+          <geometry>
+                <cylinder radius="0.131" length="0.01"/>
+         </geometry>
+ </collision>
+		<inertial>
+			<mass value="0.00776"/>
+	 		<inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+		</inertial>
+</link>
+
+<!--________________________________________FRONT-RIGHT-PROPELLER____________________________________________________________________  -->
+<link name="FRONT_RIGHT_PROPELLER">
+
+ <visual>
+     <origin xyz="0 0 0" rpy="0 0 0" />
+     <geometry>
+               <mesh filename="package://drone_f450/meshes/front_right_propeller.STL" scale="0.001 0.001 0.001"/>
+     </geometry>
+     <material name="GOLD2">
+          <color rgba="101 71 20 0.80"/>
+     </material>
+ </visual>
+    
+ <collision>
+ <origin xyz="0 0 0.0005 " rpy="0 0 0"/>
+          <geometry>
+                <cylinder radius="0.131" length="0.01"/>
+         </geometry>
+ </collision>
+		<inertial>
+			<mass value="0.00776"/>
+	 		<inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+		</inertial>
+</link>
+
+<!--________________________________________BACK-LEFT-PROPELLER____________________________________________________________________  -->
+<link name="BACK_LEFT_PROPELLER">
+
+ <visual>
+     <origin xyz="0 0 0" rpy="0 0 0" />
+     <geometry>
+               <mesh filename="package://drone_f450/meshes/back_left_propeller.STL" scale="0.001 0.001 0.001"/>
+     </geometry>
+     <material name="GOLD2">
+          <color rgba="101 71 20 0.80"/>
+     </material>
+ </visual>
+    
+ <collision>
+ <origin xyz="0 0 0.0005 " rpy="0 0 0"/>
+          <geometry>
+                <cylinder radius="0.131" length="0.01"/>
+         </geometry>
+ </collision>
+		<inertial>
+			<mass value="0.00776"/>
+	 		<inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+		</inertial>
+</link>
+
+<!--________________________________________BACK-RIGHT-PROPELLER____________________________________________________________________  -->
+<link name="BACK_RIGHT_PROPELLER">
+
+ <visual>
+     <origin xyz="0 0 0" rpy="0 0 0" />
+     <geometry>
+               <mesh filename="package://drone_f450/meshes/back_right_propeller.STL" scale="0.001 0.001 0.001"/>
+     </geometry>
+     <material name="GOLD2">
+          <texture filename="/home/sierra/catkin_ws/src/drone_f450/red_fc.jpg" />
+     </material>
+ </visual>
+    
+ <collision>
+ <origin xyz="0 0 0.0005 " rpy="0 0 0"/>
+          <geometry>
+                <cylinder radius="0.131" length="0.01"/>
+         </geometry>
+ </collision>
+		<inertial>
+			<mass value="0.00776"/>
+	 		<inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+		</inertial>
+</link>
+
+<!--________________________________________FRONT-LEFT-FOOT____________________________________________________________________  -->
+<link name="FRONT_LEFT_FOOT">
+
+ <visual>
+     <origin xyz="0 0 0" rpy="0 0 0" />
+     <geometry>
+               <mesh filename="package://drone_f450/meshes/front_left_foot.STL" scale="0.001 0.001 0.001"/>
+     </geometry>
+     <material name="GOLD2">
+          <color rgba="101 71 20 0.80"/>
+     </material>
+ </visual>
+    
+ <collision>
+ <origin xyz="0.061168 0.061168 -0.072499" rpy="0 0 0.785398"/>
+          <geometry>
+                <box size="0.144998 0.028 0.144998"/>
+         </geometry>
+ </collision>
+		<inertial>
+			<mass value="0.040"/>
+	 		<inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+		</inertial>
+</link>
+
+<!--________________________________________FRONT-RIGHT-FOOT____________________________________________________________________  -->
+<link name="FRONT_RIGHT_FOOT">
+
+ <visual>
+     <origin xyz="0 0 0" rpy="0 0 0" />
+     <geometry>
+               <mesh filename="package://drone_f450/meshes/front_right_foot.STL" scale="0.001 0.001 0.001"/>
+     </geometry>
+     <material name="GOLD2">
+          <color rgba="101 71 20 0.80"/>
+     </material>
+ </visual>
+    
+ <collision>
+ <origin xyz="0.061168 -0.061168 -0.072499" rpy="0 0 -0.785398"/>
+          <geometry>
+                <box size="0.144998 0.028 0.144998"/>
+         </geometry>
+ </collision>
+		<inertial>
+			<mass value="0.040"/>
+	 		<inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+		</inertial>
+</link>
+
+<!--________________________________________BACK-LEFT-FOOT____________________________________________________________________  -->
+<link name="BACK_LEFT_FOOT">
+
+ <visual>
+     <origin xyz="0 0 0" rpy="0 0 0" />
+     <geometry>
+               <mesh filename="package://drone_f450/meshes/back_left_foot.STL" scale="0.001 0.001 0.001"/>
+     </geometry>
+     <material name="GOLD2">
+          <color rgba="101 71 20 0.80"/>
+     </material>
+ </visual>
+    
+ <collision>
+ <origin xyz="-0.061168 0.061168 -0.072499" rpy="0 0 -0.785398"/>
+          <geometry>
+                <box size="0.144998 0.028 0.144998"/>
+         </geometry>
+ </collision>
+		<inertial>
+			<mass value="0.040"/>
+	 		<inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+		</inertial>
+</link>
+
+<!--________________________________________BACK-RIGHT-FOOT____________________________________________________________________  -->
+<link name="BACK_RIGHT_FOOT">
+
+ <visual>
+     <origin xyz="0 0 0" rpy="0 0 0" />
+     <geometry>
+               <mesh filename="package://drone_f450/meshes/back_right_foot.STL" scale="0.001 0.001 0.001"/>
+     </geometry>
+     <material name="GOLD2">
+          <color rgba="101 71 20 0.80"/>
+     </material>
+ </visual>
+    
+ <collision>
+ <origin xyz="-0.061168 -0.061168 -0.072499" rpy="0 0 0.785398"/>
+          <geometry>
+                <box size="0.144998 0.028 0.144998"/>
+         </geometry>
+ </collision>
+		<inertial>
+			<mass value="0.040"/>
+	 		<inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+		</inertial>
+</link>
+<!--__________________________________________________________________________________________________________________________________  -->
+<!--__________________________________________________________________________________________________________________________________  -->
+<joint name="CHASIS-0_GPS-ANTENNA" type="fixed">
+       <origin xyz="0.022746 0.04159 0.0015" rpy="0 0 0"/>
+       <parent link="CHASIS_0"/>
+       <child link="GPS_ANTENNA"/>
+</joint>
+<!--__________________________________________________________________________________________________________________________________  -->
+<joint name="GPS-ANTENA_PIXWAWK" type="fixed">
+       <origin xyz="0 0 0.051" rpy="0 0 0"/>
+       <parent link="GPS_ANTENNA"/>
+       <child link="GPS_PIXHAWK"/>
+</joint>
+<!--__________________________________________________________________________________________________________________________________  -->
+<joint name="CHASIS-0_LEFT-COLUMN" type="fixed">
+       <origin xyz="0 0.032 0" rpy="0 0 0"/>
+       <parent link="CHASIS_0"/>
+       <child link="LEFT_COLUMN"/>
+</joint>
+<!--__________________________________________________________________________________________________________________________________  -->
+<joint name="CHASIS-0_RIGHT-COLUMN" type="fixed">
+       <origin xyz="0 -0.032 0" rpy="0 0 0"/>
+       <parent link="CHASIS_0"/>
+       <child link="RIGHT_COLUMN"/>
+</joint>
+<!--__________________________________________________________________________________________________________________________________ --> 
+<joint name="RIGHT-COLUMN_CHASIS-1" type="fixed">
+       <origin xyz="0 0 -0.0235" rpy="0 0 0"/>
+       <parent link="RIGHT_COLUMN"/>
+       <child link="CHASIS_1"/>
+</joint>
+<!--__________________________________________________________________________________________________________________________________  -->
+<joint name="CHASIS-1_FLB" type="fixed">
+       <origin xyz="0.038007 0.070007 0" rpy="0 0 0"/>
+       <parent link="CHASIS_1"/>
+       <child link="FRONT_LEFT_BLOCK"/>
+</joint>
+<!--__________________________________________________________________________________________________________________________________  -->
+<joint name="CHASIS-1_FRB" type="fixed">
+       <origin xyz="0.038007 -0.006007 0" rpy="0 0 0"/>
+       <parent link="CHASIS_1"/>
+       <child link="FRONT_RIGHT_BLOCK"/>
+</joint>
+<!--__________________________________________________________________________________________________________________________________  -->
+<joint name="CHASIS-1_BLB" type="fixed">
+       <origin xyz="-0.038007 0.070007 0" rpy="0 0 0"/>
+       <parent link="CHASIS_1"/>
+       <child link="BACK_LEFT_BLOCK"/>
+</joint>
+<!--__________________________________________________________________________________________________________________________________  -->
+<joint name="CHASIS-1_BRB" type="fixed">
+       <origin xyz="-0.038007 -0.006007 0" rpy="0 0 0"/>
+       <parent link="CHASIS_1"/>
+       <child link="BACK_RIGHT_BLOCK"/>
+</joint>
+<!--__________________________________________________________________________________________________________________________________  -->
+<joint name="FLB_FLA" type="fixed">
+       <origin xyz="-0.005127 -0.005127 -0.019" rpy="0 0 0"/>
+       <parent link="FRONT_LEFT_BLOCK"/>
+       <child link="FRONT_LEFT_ARM"/>
+</joint>
+<!--__________________________________________________________________________________________________________________________________  -->
+<joint name="FRB_FRA" type="fixed">
+       <origin xyz="-0.005127 0.005127 -0.019" rpy="0 0 0"/>
+       <parent link="FRONT_RIGHT_BLOCK"/>
+       <child link="FRONT_RIGHT_ARM"/>
+</joint>
+<!--__________________________________________________________________________________________________________________________________  -->
+<joint name="BLB_BLA" type="fixed">
+       <origin xyz="0.005127 -0.005127 -0.019" rpy="0 0 0"/>
+       <parent link="BACK_LEFT_BLOCK"/>
+       <child link="BACK_LEFT_ARM"/>
+</joint>
+<!--__________________________________________________________________________________________________________________________________  -->
+<joint name="BRB_BRA" type="fixed">
+       <origin xyz="0.005127 0.005127 -0.019" rpy="0 0 0"/>
+       <parent link="BACK_RIGHT_BLOCK"/>
+       <child link="BACK_RIGHT_ARM"/>
+</joint>
+<!--__________________________________________________________________________________________________________________________________  -->
+<joint name="FLA-CHASIS-2" type="fixed">
+       <origin xyz="0.002934 0.002934  -0.019" rpy="0 0 0"/>
+       <parent link="FRONT_LEFT_ARM"/>
+       <child link="CHASIS_2"/>
+</joint>
+<!--__________________________________________________________________________________________________________________________________  -->
+<joint name="FLA-FLMB" type="fixed">
+       <origin xyz="0.108894 0.108894  0" rpy="0 0 0"/>
+       <parent link="FRONT_LEFT_ARM"/>
+       <child link="FRONT_LEFT_MBASE"/>
+</joint>
+<!--__________________________________________________________________________________________________________________________________  -->
+<joint name="FRA-FRMB" type="fixed">
+       <origin xyz="0.108894 -0.108894  0" rpy="0 0 0"/>
+       <parent link="FRONT_RIGHT_ARM"/>
+       <child link="FRONT_RIGHT_MBASE"/>
+</joint>
+<!--__________________________________________________________________________________________________________________________________  -->
+<joint name="BLA-BLMB" type="fixed"> <origin xyz="-0.108894 0.108894  0" rpy="0 0 0"/> <parent link="BACK_LEFT_ARM"/>
+ <child link="BACK_LEFT_MBASE"/> </joint>
+ 
+<!--__________________________________________________________________________________________________________________________________  -->
+<joint name="BRA-BRMB" type="fixed"> <origin xyz="-0.108894 -0.108894  0" rpy="0 0 0"/> <parent link="BACK_RIGHT_ARM"/> <child link="BACK_RIGHT_MBASE"/> </joint>
+<!--__________________________________________________________________________________________________________________________________  -->
+<joint name="FLMB-FLM1" type="fixed"> <origin xyz="0.031466 0.031466  0.008" rpy="0 0 0"/> <parent link="FRONT_LEFT_MBASE"/> <child link="FRONT_LEFT_MOTOR"/> </joint>
+<!--__________________________________________________________________________________________________________________________________  -->
+<joint name="FRMB-FRM2" type="fixed"> <origin xyz="0.031466 -0.031466  0.008" rpy="0 0 0"/> <parent link="FRONT_RIGHT_MBASE"/> <child link="FRONT_RIGHT_MOTOR"/> </joint>
+<!--__________________________________________________________________________________________________________________________________  -->
+<joint name="BLMB-BLM3" type="fixed"> <origin xyz="-0.031466 00.031466  0.008" rpy="0 0 0"/> <parent link="BACK_LEFT_MBASE"/> <child link="BACK_LEFT_MOTOR"/> </joint>
+<!--__________________________________________________________________________________________________________________________________  -->
+<joint name="BRMB-BRM4" type="fixed"> <origin xyz="-0.031466 -00.031466  0.008" rpy="0 0 0"/> <parent link="BACK_RIGHT_MBASE"/> <child link="BACK_RIGHT_MOTOR"/> </joint> 
+<!--__________________________________________________________________________________________________________________________________  -->
+<joint name="FLM1_FLP" type="continuous">
+       <axis xyz="0 0 1" />
+       <limit effort="100" velocity="1193.80" /> #speed for propeller limited to 11400 RPM or 1193.80 Rad/sec
+       <origin xyz="0 0 0.023" rpy="0 0 0"/>
+       <parent link="FRONT_LEFT_MOTOR"/>
+       <child link="FRONT_LEFT_PROPELLER"/>    
+</joint>
+<!--__________________________________________________________________________________________________________________________________  -->
+<joint name="FRM2_FRP" type="continuous">
+       <axis xyz="0 0 1" />
+       <limit effort="100" velocity="1193.80" /> #speed for propeller limited to 11400 RPM or 1193.80 Rad/sec
+       <origin xyz="0 0 0.023" rpy="0 0 0"/>
+       <parent link="FRONT_RIGHT_MOTOR"/>
+       <child link="FRONT_RIGHT_PROPELLER"/>        
+</joint>
+<!--__________________________________________________________________________________________________________________________________  -->
+<joint name="BLM3_BLP" type="continuous">
+       <axis xyz="0 0 1" />
+       <limit effort="100" velocity="1193.80" /> #speed for propeller limited to 11400 RPM or 1193.80 Rad/sec
+       <origin xyz="0 0 0.023" rpy="0 0 0"/>
+       <parent link="BACK_LEFT_MOTOR"/>
+       <child link="BACK_LEFT_PROPELLER"/>         
+</joint>
+<!--__________________________________________________________________________________________________________________________________  -->
+<joint name="BRM4_BRP" type="continuous">
+       <axis xyz="0 0 1" />
+       <limit effort="100" velocity="1193.80" /> #speed for propeller limited to 11400 RPM or 1193.80 Rad/sec
+       <origin xyz="0 0 0.023" rpy="0 0 0"/>
+       <parent link="BACK_RIGHT_MOTOR"/>
+       <child link="BACK_RIGHT_PROPELLER"/>             
+</joint>
+<!--__________________________________________________________________________________________________________________________________  -->
+<joint name="CHASIS2-FLF" type="fixed"> <origin xyz="0 0 -0.0015" rpy="0 0 0"/> <parent link="CHASIS_2"/> <child link="FRONT_LEFT_FOOT"/>
+</joint>    
+<!--__________________________________________________________________________________________________________________________________  -->
+<joint name="CHASIS2-FRF" type="fixed"> <origin xyz="0 -0.071502 -0.0015" rpy="0 0 0"/> <parent link="CHASIS_2"/> <child link="FRONT_RIGHT_FOOT"/> </joint>
+<!--__________________________________________________________________________________________________________________________________  -->
+<joint name="CHASIS2-BLF" type="fixed"> <origin xyz="-0.071502 0 -0.0015" rpy="0 0 0"/> <parent link="CHASIS_2"/> <child link="BACK_LEFT_FOOT"/> </joint>
+<!--__________________________________________________________________________________________________________________________________  -->
+<joint name="CHASIS2-BRF" type="fixed"> <origin xyz="-0.071502 -0.071502  -0.0015" rpy="0 0 0"/> <parent link="CHASIS_2"/> <child link="BACK_RIGHT_FOOT"/> </joint>                
+<!--__________________________________________________________________________________________________________________________________  -->
+ <gazebo reference="CHASIS_0"> <material>Gazebo/Black</material> </gazebo>     
+ <gazebo reference="CHASIS_1"> <material>Gazebo/Black</material> </gazebo>       
+ <gazebo reference="CHASIS_2"> <material>Gazebo/Black</material> </gazebo>
+ <gazebo reference="GPS_ANTENNA"> <material>Gazebo/Black</material> </gazebo>     
+ <gazebo reference="GPS_PIXHAWK"> <material>Gazebo/Black</material> </gazebo>      
+ <gazebo reference="FRONT_LEFT_PROPELLER"> <material>Gazebo/Black</material> </gazebo>
+ <gazebo reference="FRONT_RIGHT_PROPELLER"> <material>Gazebo/Black</material> </gazebo>     
+ <gazebo reference="BACK_LEFT_PROPELLER"> <material>Gazebo/Black</material> </gazebo>
+ <gazebo reference="BACK_RIGHT_PROPELLER"> <material>Gazebo/Black</material> </gazebo>
+ <gazebo reference="FRONT_LEFT_MOTOR"> <material>Gazebo/Red</material> </gazebo>
+ <gazebo reference="FRONT_RIGHT_MOTOR"> <material>Gazebo/Red</material> </gazebo>     
+ <gazebo reference="BACK_LEFT_MOTOR"> <material>Gazebo/Red</material> </gazebo>
+ <gazebo reference="BACK_RIGHT_MOTOR"> <material>Gazebo/Red</material> </gazebo>
+<!--________________________________________________________________________________________________________________________-->
+               <transmission name="tran1">
+			<type>transmission_interface/SimpleTransmission</type>
+			<joint name="FLM1_FLP">
+				<hardwareInterface>EffortJointInterface</hardwareInterface>
+			</joint>
+			<actuator name="motor1">
+    				<mechanicalReduction>1</mechanicalReduction>
+    				<hardwareInterface>EffortJointInterface</hardwareInterface>
+  			</actuator>
+		</transmission>
+<!--________________________________________________________________________________________________________________________-->
+               <transmission name="tran2">
+			<type>transmission_interface/SimpleTransmission</type>
+			<joint name="FRM2_FRP">
+				<hardwareInterface>EffortJointInterface</hardwareInterface>
+			</joint>
+			<actuator name="motor2">
+    				<mechanicalReduction>1</mechanicalReduction>
+    				<hardwareInterface>EffortJointInterface</hardwareInterface>
+  			</actuator>
+		</transmission>
+<!--________________________________________________________________________________________________________________________-->
+               <transmission name="tran3">
+			<type>transmission_interface/SimpleTransmission</type>
+			<joint name="BLM3_BLP">
+				<hardwareInterface>EffortJointInterface</hardwareInterface>
+			</joint>
+			<actuator name="motor3">
+    				<mechanicalReduction>1</mechanicalReduction>
+    				<hardwareInterface>EffortJointInterface</hardwareInterface>
+  			</actuator>
+		</transmission>
+<!--________________________________________________________________________________________________________________________-->
+               <transmission name="tran4">
+			<type>transmission_interface/SimpleTransmission</type>
+			<joint name="BRM4_BRP">
+				<hardwareInterface>EffortJointInterface</hardwareInterface>
+			</joint>
+			<actuator name="motor4">
+    				<mechanicalReduction>1</mechanicalReduction>
+    				<hardwareInterface>EffortJointInterface</hardwareInterface>
+  			</actuator>
+		</transmission>
+<!--________________________________________________________________________________________________________________________-->
+<!--________________________________________________________________________________________________________________________-->
+	<gazebo> 
+	<plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so"> 
+	<robotNamespace>/f450</robotNamespace> </plugin>
+	</gazebo>
+
+	<gazebo>
+     		<plugin name="fluid_resitance_plugin" filename="libfluid_resitance_plugin.so">
+        		<fluid_resitanceTopicName>/fluid_resitance</fluid_resitanceTopicName>
+        			<NameLinkToApplyResitance>simple_sphere_base_link</NameLinkToApplyResitance>
+        		<rate>2.0</rate>
+    		</plugin>
+	</gazebo>
+
+</robot>
+

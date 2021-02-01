@@ -1,0 +1,28 @@
+f450:
+  # Publish all joint states -----------------------------------
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50  
+  
+  # Position Controllers ---------------------------------------
+  joint1_velocity_controller:
+    type: effort_controllers/JointVelocityController
+    joint: FLM1_FLP
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+
+  joint2_velocity_controller:
+    type: effort_controllers/JointVelocityController
+    joint: FRM2_FRP
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+
+  joint3_velocity_controller:
+    type: effort_controllers/JointVelocityController
+    joint: BLM3_BLP
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+
+  joint4_velocity_controller:
+    type: effort_controllers/JointVelocityController
+    joint: BRM4_BRP
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+
+
